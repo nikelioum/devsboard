@@ -6,9 +6,66 @@
 .category-board {
     padding: 25px;
     margin-bottom: 25px;
+    background-color: #C996CC;
 }
 
 .job-hashtag{
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.row.bg-white.board-menu {
+    padding: 40px;
+}
+
+body {
+    background-color: #1C0C5B;
+}
+
+
+h1 {
+    color: #EEEEEE;
+}
+
+a.navbar-brand {
+    color: #EEEEEE !important;
+}
+
+
+
+h4 {
+    color: #EEEEEE;
+}
+
+.row.bg-white.board-menu {
+    background-color: #916BBF !important;
+}
+
+a.nav-link {
+    color: #1c0c5b;
+    font-weight: 600;
+}
+
+.card.job-card.shadow-sm {
+    background-color: #3D2C8D;
+}
+
+p {
+    color: #eeeeee;
+}
+
+.btn-primary {
+    color: #eee !important;
+    background-color: #c996cc !important;
+    border-color: #916bbf !important;
+}
+
+li.nav-item {
+    background-color: #eeeeee;
+    margin-right: 25px;
+}
+
+h3.job-hashtag {
+    color: #3D2C8D;
+    font-weight: 600;
 }
