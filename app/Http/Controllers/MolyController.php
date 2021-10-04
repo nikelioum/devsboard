@@ -39,8 +39,11 @@ class MolyController extends Controller
 
             $job_company_name =  $node->filter('h4.base-search-card__subtitle > a')->text(); 
 
-
-
+            
+            if ($checker=Job::where('job_url', $job_url)->exists()) {
+            // ...
+            }
+            else{ 
         
             $job = new Job;
 
@@ -58,12 +61,14 @@ class MolyController extends Controller
 
             $job->save(); 
 
+            }
+
 
         });
 
 
 
-        //LINKEDIN #WEB DESIGNERS
+        //LINKEDIN #WEB DEVELOPERS
 
 
         $url="https://www.linkedin.com/jobs/search?keywords=Web%20Developer&location=Athens%2C%20Attiki%2C%20Greece&geoId=103077496&trk=public_jobs_jobs-search-bar_search-submit&position=1&pageNum=0";
@@ -80,9 +85,13 @@ class MolyController extends Controller
 
             $job_url =  $node->filter('a.base-card__full-link')->attr('href');
 
-            $job_company_name =  $node->filter('h4.base-search-card__subtitle > a')->text(); 
+            $job_company_name =  $node->filter('h4.base-search-card__subtitle > a')->text();
 
 
+            if ($checker=Job::where('job_url', $job_url)->exists()) {
+            // ...
+            }
+            else{  
 
         
             $job = new Job;
@@ -101,16 +110,20 @@ class MolyController extends Controller
 
             $job->save(); 
 
+            }
+
 
         });
 
 
 
-        //INDEED #WEB DEVELOPERS
+
+
+       //INDEED #WEB DEVELOPERS
 
 
 
-        $url="https://gr.indeed.com/Web-Developer-jobs";
+        $url="https://gr.indeed.com/Developer-jobs?from=relatedQueries&saIdx=3&rqf=1&parentQnorm=Web+Developer";
         
         
 
@@ -128,6 +141,13 @@ class MolyController extends Controller
 
 
 
+            if ($checker=Job::where('job_url', $job_url)->exists()) {
+            // ...
+            }
+            else{ 
+
+
+
         
             $job = new Job;
 
@@ -137,16 +157,21 @@ class MolyController extends Controller
 
             $job->job_url = "https://gr.indeed.com$job_url";
 
-            $job->job_company_name = $job_company_name;
+            $job->job_company_name = $job_company_name;        
 
-            $job->job_category = "WEB DEVELOPER";
+            $job->job_category = "WEB DEVELOPERS";
 
             $job->job_website_feed = "INDEED";
 
-            $job->save(); 
+            $job->save();
+
+            } 
 
 
         });
+
+
+        
 
 
 
@@ -171,6 +196,12 @@ class MolyController extends Controller
             $job_company_name =  $node->filter('span.companyName')->text();
 
 
+            if ($checker=Job::where('job_url', $job_url)->exists()) {
+            // ...
+            }
+            else{ 
+
+
 
         
             $job = new Job;
@@ -187,7 +218,9 @@ class MolyController extends Controller
 
             $job->job_website_feed = "INDEED";
 
-            $job->save(); 
+            $job->save();
+
+            } 
 
 
         });
